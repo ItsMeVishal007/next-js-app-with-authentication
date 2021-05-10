@@ -13,4 +13,17 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.Navbar{
+  width: 100%;
+  padding: 30px;
+  background-color: #81ecec;
+  display: flex;
+  justify-content: space-between;
+}
+.Layout{
+  width: 70%;
+  margin: auto;
 }
