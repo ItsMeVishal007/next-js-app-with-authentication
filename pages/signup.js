@@ -1,5 +1,6 @@
 import React, { useState , useContext } from 'react';
-import userAuth from '../context/context'
+import userAuth from '../context/context';
+import {useRouter} from 'next/router'
 
 const Signup = () => {
   const [UserRegisterDetail, setUserRegisterDetail] = useState({
@@ -9,6 +10,7 @@ const Signup = () => {
     Password: ''
   })
   const { authPermission, setAuthPermission } = useContext(userAuth);
+  const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,6 +36,7 @@ const Signup = () => {
         body: JSON.stringify(UserRegisterDetail)
       })
       setAuthPermission(true)
+      router.push('/dashboard')
     } catch (error) {
       console.log('Sorry data is not registering ', error)
     }

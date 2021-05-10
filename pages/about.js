@@ -11,13 +11,15 @@ const About = () => {
 
   return (
     <div>
-      {authPermission ? <p>This is the about us page</p> : <>
-        <h4>Please Login To access the data of this page</h4>
+      {/* {authPermission ?  */}
+      <p>This is the about us page</p>
+      {/* //  : <> */}
+        {/* <h4>Please Login To access the data of this page</h4>
         <Link href="/login">
           <p style={{ color: 'lightblue' }}>Login</p>
         </Link>
       </>
-      }
+      } */}
 
     </div>
   )

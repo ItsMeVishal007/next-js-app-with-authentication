@@ -8,6 +8,7 @@ const Login = ({ SingleUserData }) => {
     Email: '',
     Password: ''
   });
+  const [error , setError] = useState(false);
   const { authPermission, setAuthPermission } = useContext(userAuth);
   const router = useRouter();
 
@@ -30,6 +31,7 @@ const Login = ({ SingleUserData }) => {
     ))
     if (!userdata[0]) {
       console.log("sorry user not found ");
+      setError(true)
     } else {
       console.log("yes we found the user");
       setAuthPermission(true)
@@ -44,6 +46,7 @@ const Login = ({ SingleUserData }) => {
         <input placeholder="Password" name="Password" onChange={handleChange} />
         <button type='submit'>Login</button>
       </form>
+      <p style={{color:'#d63031'}}>{error ? 'Email and password must be correct' : null}</p>
     </div>
   )
 }
